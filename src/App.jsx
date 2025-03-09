@@ -1,9 +1,15 @@
 import { useState } from 'react'
 import './App.css'
 
+const initialHtmlContent = `
+<h1>Hello World</h1>
+<p>Start typing your HTML here</p>
+<a href="about:blank" target="_blank">link</a>
+`
+
 function App() {
   const [activeTab, setActiveTab] = useState('html')
-  const [htmlContent, setHtmlContent] = useState('<h1>Hello World</h1>\n<p>Start typing your HTML here</p>')
+  const [htmlContent, setHtmlContent] = useState(initialHtmlContent)
 
   const handleTabChange = (tab) => {
     setActiveTab(tab)
@@ -12,6 +18,16 @@ function App() {
   const handleHtmlChange = (e) => {
     setHtmlContent(e.target.value)
   }
+
+  // Basic dark theme styling
+  const darkThemeCSS = `
+    <style>
+      body {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+      }
+    </style>
+  `;
 
   return (
     <div className="app-container">
@@ -46,7 +62,7 @@ function App() {
           <div className="preview-container">
             <iframe
               title="HTML Preview"
-              srcDoc={htmlContent}
+              srcDoc={darkThemeCSS + htmlContent}
               sandbox="allow-scripts"
               width="100%"
               height="500px"
