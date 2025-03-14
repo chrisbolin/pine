@@ -55,6 +55,7 @@ Error generating stack: `+u.message+`
       body {
         background-color: #1e1e1e;
         color: #e0e0e0;
+        font-size: 1.3em;
       }
     </style>
   `+K,sandbox:"allow-scripts",width:"100%",height:"500px"})})]})]})}O1.createRoot(document.getElementById("root")).render(_t.jsx(D1,{}));
